@@ -40,42 +40,52 @@ Siga as instruções abaixo para configurar o projeto em seu ambiente local:
     ```bash
     git clone https://github.com/vidaaal/mycontacts.git
     ```
+    
 2. Acesse o diretório do projeto:
     ```bash
     cd mycontacts
     ```
+
 4. Acesse a pasta da api:
     ```bash
     cd api
     ```
+
 3. Instale as dependências do Back-End:
     ```bash
     yarn install
     ```
+
 4. Inicie um container do PostgreSQL utilizando o Docker:
     ```bash
     docker run --name mycontacts-postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
     ```
+
 5. Crie um banco de dados no PostgreSQL para o MyContacts:
     ```bash
     docker exec -it mycontacts-postgres psql -U postgres -c "CREATE DATABASE mycontacts"
     ```
+
 6. Inicie o servidor Back-End:
     ```bash
     yarn dev
     ```
+
 7. Acesse a pasta do Front-End:
     ```bash
     cd ../fe
     ```
+
 8. Instale as dependências:
     ```bash
     yarn install
     ```
+
 8. Inicie o servidor Front-End:
     ```bash
     yarn start
     ```
+
 9. Acesse a aplicação em seu navegador:
     ```bash
     http://localhost:3000/
