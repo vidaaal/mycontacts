@@ -1,4 +1,4 @@
-# 📞 MyContacts
+# 📞📚 MyContacts
 
 Este é um repositório para o projeto MyContacts, uma aplicação de gerenciamento de contatos desenvolvida em ReactJS no Front-End e Node.js com uma imagem de Postgres rodando no Docker no Back-End. Com o MyContacts, os usuários podem armazenar e gerenciar facilmente seus contatos em uma interface intuitiva.
 
