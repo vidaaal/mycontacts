@@ -40,7 +40,6 @@ Siga as instruções abaixo para configurar o projeto em seu ambiente local:
     ```bash
     git clone https://github.com/vidaaal/mycontacts.git
     ```
-
 2. Acesse o diretório do projeto:
     ```bash
     cd mycontacts
@@ -73,15 +72,14 @@ Siga as instruções abaixo para configurar o projeto em seu ambiente local:
     ```bash
     yarn install
     ```
-
 8. Inicie o servidor Front-End:
-  ```bash
-  yarn start
-  ```
+    ```bash
+    yarn start
+    ```
 9. Acesse a aplicação em seu navegador:
-  ```bash
-  http://localhost:3000/
-  ```
+    ```bash
+    http://localhost:3000/
+    ```
 
 ## 📝 Licença
 
