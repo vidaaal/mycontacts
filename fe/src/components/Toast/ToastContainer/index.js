@@ -1,21 +1,18 @@
 import { useEffect } from 'react';
-import useAnimatedList from '../../../hooks/useAnimatedList';
+
+import ToastMessage from '../ToastMessage';
 
 import { toastEventManager } from '../../../utils/toast';
-import ToastMessage from '../ToastMessage';
-import { Container } from './styles';
 
-export default function ToastContainer() {
-  const {
-    handleRemoveItem,
-    setItems,
-    renderList,
-  } = useAnimatedList([]);
+import useAnimatedList from '../../../hooks/useAnimatedList';
+
+import * as S from './styles';
+
+function ToastContainer() {
+  const { setItems, renderList, handleRemoveItems } = useAnimatedList();
 
   useEffect(() => {
-    function handleAddToast(event) {
-      const { type, text, duration } = event;
-
+    function handleAddToast({ type, text, duration }) {
       setItems((prevState) => [
         ...prevState,
         { id: Math.random(), type, text, duration },
@@ -27,19 +24,21 @@ export default function ToastContainer() {
     return () => {
       toastEventManager.removeListener('addtoast', handleAddToast);
     };
-  }, []);
+  }, [setItems]);
 
   return (
-    <Container>
+    <S.Container>
       {renderList((message, { isLeaving, animatedRef }) => (
         <ToastMessage
           key={message.id}
           message={message}
-          onRemoveMessage={handleRemoveItem}
-          isLeaving={isLeaving}
+          onRemoveMessage={handleRemoveItems}
           animatedRef={animatedRef}
+          isLeaving={isLeaving}
         />
       ))}
-    </Container>
+    </S.Container>
   );
 }
+
+export default ToastContainer;
